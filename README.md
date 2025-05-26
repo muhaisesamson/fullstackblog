@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # MindHub
 
 MindHub is an informative, user-friendly, and interactive web platform focused initially on mental health information — including conditions, therapies, and medications. The platform aims to become a trusted, go-to resource for accessible medical knowledge, combining science-backed content with empathy and community interaction.
@@ -122,7 +121,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 **Disclaimer**: MindHub provides educational information only and is not a substitute for professional medical advice.
-=======
-# fullstackblog
-A fully interactive website that allows guests gets answers to the questions and even learn and they check it out
->>>>>>> ba4d17ea52425cf6354e9a38908356e71e069c31
