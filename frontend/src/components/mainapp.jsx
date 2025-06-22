@@ -526,7 +526,8 @@ const Main = () => {
               <div>
                 <h4 className="text-lg text-gray-800 font-semibold mb-2">Phone</h4>
                 <a href="tel:+1234567890" className="text-gray-600 transition-all duration-300 hover:text-purple-900">
-                  +1 (234) 567-890
+                  +256 763634264
+                  
                 </a>
               </div>
             </motion.div>
