@@ -488,7 +488,7 @@ const Main = () => {
           </motion.div>
           
           <div className="mt-8 text-white/80">
-            <p>No credit card required • Cancel anytime</p>
+            <p></p>
           </div>
         </div>
       </section>
