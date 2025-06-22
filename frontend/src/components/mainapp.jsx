@@ -409,7 +409,7 @@ const Main = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-purple-50">
+     {/* <section className="py-16 bg-purple-50">
         <div className="max-w-6xl mx-auto px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
@@ -432,7 +432,7 @@ const Main = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section>*/}
 
       {/* CTA Section */}
       <section id="get-started" className="py-32 text-center relative overflow-hidden min-h-[500px] flex items-center">
