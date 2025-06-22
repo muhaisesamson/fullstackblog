@@ -36,7 +36,7 @@ const Footer = () => {
             </li>
             <li className="mb-3">
               <a href="#" className="text-white text-opacity-70 hover:text-white hover:pl-1 transition-all duration-300">
-                Careers
+               
               </a>
             </li>
             <li className="mb-3">

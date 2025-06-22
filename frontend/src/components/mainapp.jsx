@@ -230,31 +230,7 @@ const Main = () => {
     }
   ];
 
-  const testimonials = [
-    {
-      quote: "MindHub transformed my daily routine. The mindfulness exercises helped me reduce my anxiety significantly.",
-      author: "Sarah J.",
-      role: "Teacher"
-    },
-    {
-      quote: "The mood analytics gave me insights I never would have discovered on my own. Life-changing!",
-      author: "Michael T.",
-      role: "Software Engineer"
-    },
-    {
-      quote: "Finding the right therapist was so easy with MindHub. I'm finally making real progress.",
-      author: "Emma L.",
-      role: "Graphic Designer"
-    },
-    {
-      quote: "The community support kept me going during tough times. I've made real connections here.",
-      author: "David K.",
-      role: "Student"
-    }
-  ];
-
   const [activeImageIndex, setActiveImageIndex] = useState(0);
-  const [activeTestimonialIndex, setActiveTestimonialIndex] = useState(0);
   const formRef = useRef(null);
 
   useEffect(() => {
@@ -264,15 +240,8 @@ const Main = () => {
       );
     }, 5000);
 
-    const testimonialInterval = setInterval(() => {
-      setActiveTestimonialIndex((prevIndex) => 
-        prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
-      );
-    }, 7000);
-
     return () => {
       clearInterval(imageInterval);
-      clearInterval(testimonialInterval);
     };
   }, []);
 
@@ -300,61 +269,46 @@ const Main = () => {
       {/* Floating Action Button */}
       <FloatingActionButton />
 
-      {/* Hero Section */}
-      <section id="home" className="min-h-screen flex items-center py-32 md:py-20 relative overflow-hidden bg-gradient-to-br from-purple-100 to-gray-50">
+      {/* Hero Section - Full Page */}
+      <section id="home" className="min-h-screen flex items-center relative overflow-hidden bg-gradient-to-br from-purple-900 to-blue-900">
         <div className="absolute inset-0 overflow-hidden z-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-white/50 to-transparent z-10"></div>
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1495837174058-628aafc7d610?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center opacity-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-transparent z-10"></div>
+          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1495837174058-628aafc7d610?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center opacity-20"></div>
         </div>
 
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center px-8 relative z-10">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center px-8 relative z-10 w-full">
           <div className="hero-content text-center md:text-left">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-800 mb-6 leading-tight">
+            {/* Replace this div with your logo */}
+            <div className="mb-12">
+              <img 
+                src="/your-logo.png" 
+                alt="Your Logo" 
+                className="h-16 w-auto mx-auto md:mx-0"
+              />
+            </div>
+            
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
               <SplitText delay={0.03} wordDelay={0.1}>
                 Your Journey to Mental Wellness Starts Here
               </SplitText>
             </h1>
-            <p className="text-xl text-gray-600 mb-8 max-w-lg mx-auto md:mx-0">
+            <p className="text-xl text-white/90 mb-8 max-w-lg mx-auto md:mx-0">
               Discover personalized tools, expert guidance, and a supportive community to help you achieve lasting mental wellness and emotional balance.
             </p>
             <div className="flex flex-col md:flex-row gap-4 mb-12 justify-center md:justify-start">
               <Button 
                 onClick={() => scrollToSection('get-started')}
-                className="bg-purple-900 hover:bg-purple-700 text-white py-6 px-8 text-lg shadow-lg hover:shadow-xl transition-all"
+                className="bg-white text-purple-900 hover:bg-gray-100 py-6 px-8 text-lg shadow-lg hover:shadow-xl transition-all font-bold"
               >
                 Start Your Journey
               </Button>
               <Button 
                 onClick={() => scrollToSection('features')}
                 variant="outline"
-                className="text-purple-900 border-purple-900 hover:bg-purple-900 hover:text-white py-6 px-8 text-lg shadow-lg hover:shadow-xl transition-all"
+                className="text-white border-white hover:bg-white/10 py-6 px-8 text-lg shadow-lg hover:shadow-xl transition-all"
               >
                 Learn More
               </Button>
-            </div>
-            
-            <div className="flex items-center justify-center md:justify-start gap-4">
-              <div className="flex -space-x-2">
-                {[1, 2, 3].map((item) => (
-                  <img 
-                    key={item}
-                    src={`https://randomuser.me/api/portraits/${item % 2 === 0 ? 'women' : 'men'}/${item+20}.jpg`}
-                    alt="User"
-                    className="w-10 h-10 rounded-full border-2 border-white"
-                  />
-                ))}
-              </div>
-              <div className="text-left">
-                <p className="text-sm font-medium text-gray-700">Trusted by 10,000+ users</p>
-                <div className="flex items-center">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
-                  <span className="text-sm ml-1 text-gray-600">4.9/5</span>
-                </div>
-              </div>
             </div>
           </div>
           
@@ -364,7 +318,7 @@ const Main = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
             >
-              <Card className="w-full max-w-sm bg-gradient-to-br from-purple-500 to-purple-700 rounded-2xl shadow-xl border-0 p-16 text-white text-center relative overflow-hidden">
+              <Card className="w-full max-w-sm bg-white/10 backdrop-blur-sm rounded-2xl shadow-xl border border-white/20 p-8 text-white text-center relative overflow-hidden">
                 <div className="absolute -top-20 -right-20 w-40 h-40 rounded-full bg-white/10"></div>
                 <div className="absolute -bottom-20 -left-20 w-40 h-40 rounded-full bg-white/10"></div>
                 <CardContent className="p-0 relative z-10">
@@ -382,7 +336,7 @@ const Main = () => {
                     🧠
                   </motion.div>
                   <h3 className="text-2xl font-bold">MindHub</h3>
-                  <p className="text-purple-100 mt-2">Mental Wellness App</p>
+                  <p className="text-white/80 mt-2">Mental Wellness App</p>
                 </CardContent>
               </Card>
             </motion.div>
@@ -513,18 +467,11 @@ const Main = () => {
             Ready to Transform Your Mental Wellness?
           </motion.h2>
           
-          <AnimatePresence mode="wait">
-            <motion.p
-              key={activeTestimonialIndex}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.5 }}
-              className="text-xl text-white/90 mb-10 min-h-[60px]"
-            >
-              "{testimonials[activeTestimonialIndex].quote}"
-            </motion.p>
-          </AnimatePresence>
+          <motion.p
+            className="text-xl text-white/90 mb-10 min-h-[60px]"
+          >
+            Join thousands of users who have improved their mental health with our comprehensive tools and resources.
+          </motion.p>
           
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -562,8 +509,8 @@ const Main = () => {
               </div>
               <div>
                 <h4 className="text-lg text-gray-800 font-semibold mb-2">Email</h4>
-                <a href="mailto:support@mindhub.com" className="text-gray-600 transition-all duration-300 hover:text-purple-900">
-                  support@mindhub.com
+                <a href="mailto:mindhubHS@gmail.com" className="text-gray-600 transition-all duration-300 hover:text-purple-900">
+                  mindhubHS@gmail.com
                 </a>
               </div>
             </motion.div>
@@ -595,8 +542,8 @@ const Main = () => {
               <div>
                 <h4 className="text-lg text-gray-800 font-semibold mb-2">Address</h4>
                 <p className="text-gray-600">
-                  123 Wellness Street<br />
-                  Mindful City, MC 12345
+                  Makerere University<br />
+                  
                 </p>
               </div>
             </motion.div>
