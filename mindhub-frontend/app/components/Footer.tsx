@@ -34,10 +34,10 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: <Twitter size={18} />, href: "#" },
+    { icon: <Twitter size={18} />, href: "https://x.com/mindhubHS" },
     { icon: <Facebook size={18} />, href: "#" },
     { icon: <Instagram size={18} />, href: "#" },
-    { icon: <Linkedin size={18} />, href: "#" },
+    { icon: <Linkedin size={18} />, href: "https://www.linkedin.com/in/mindhub-hs-8551bb372" },
   ];
 
   return (
