@@ -1,4 +1,4 @@
-import { SiFacebook, SiInstagram, SiLinkedin, SiTwitter } from 'react-icons/si';
+import { SiFacebook, SiInstagram, SiLinkedin, SiX } from 'react-icons/si';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
@@ -34,7 +34,7 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: <SiTwitter size={18} />, href: "https://x.com/mindhubHS" },
+    { icon: <SiX size={18} />, href: "https://x.com/mindhubHS" },
     { icon: <SiFacebook size={18} />, href: "#" },
     { icon: <SiInstagram size={18} />, href: "#" },
     { icon: <SiLinkedin size={18} />, href: "https://www.linkedin.com/in/mindhub-hs-8551bb372" },
