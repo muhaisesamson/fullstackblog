@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Linkedin, Twitter } from 'lucide-react';
+import { SiFacebook, SiInstagram, SiLinkedin, SiTwitter } from 'react-icons/si';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
@@ -34,10 +34,10 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: <Twitter size={18} />, href: "https://x.com/mindhubHS" },
-    { icon: <Facebook size={18} />, href: "#" },
-    { icon: <Instagram size={18} />, href: "#" },
-    { icon: <Linkedin size={18} />, href: "https://www.linkedin.com/in/mindhub-hs-8551bb372" },
+    { icon: <SiTwitter size={18} />, href: "https://x.com/mindhubHS" },
+    { icon: <SiFacebook size={18} />, href: "#" },
+    { icon: <SiInstagram size={18} />, href: "#" },
+    { icon: <SiLinkedin size={18} />, href: "https://www.linkedin.com/in/mindhub-hs-8551bb372" },
   ];
 
   return (
