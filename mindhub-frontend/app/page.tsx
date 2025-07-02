@@ -8,6 +8,7 @@ import { Label } from "@/components/ui/label";
 import { useInView } from 'react-intersection-observer';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowDown, ArrowUp, Mail, Phone, MapPin, Clock } from 'lucide-react';
+import Link from 'next/link'
 import Layout from './components/Layout';
 
 interface SplitTextProps {
@@ -195,7 +196,6 @@ const FloatingActionButton: React.FC = () => {
   );
 };
 
-// Main content component (without Layout wrapper)
 const MainContent: React.FC = () => {
   const features = [
     {
@@ -306,14 +306,14 @@ const MainContent: React.FC = () => {
                 onClick={() => scrollToSection('get-started')}
                 className="bg-background text-primary hover:bg-background/90 py-6 px-8 text-lg shadow-lg hover:shadow-xl transition-all font-bold"
               >
-                Start Your Journey
+                <Link href="/comingsoon">Start Your Journey</Link>
               </Button>
               <Button 
                 onClick={() => scrollToSection('features')}
                 variant="outline"
                 className="text-background border-background hover:bg-background/10 py-6 px-8 text-lg shadow-lg hover:shadow-xl transition-all"
               >
-                Learn More
+                <Link href="/comingsoon">Learn More</Link>
               </Button>
             </div>
           </div>
@@ -455,11 +455,11 @@ const MainContent: React.FC = () => {
             transition={{ delay: 0.3 }}
             viewport={{ once: true }}
           >
-            <Button 
+            <Button asChild
               className="bg-background text-primary font-bold py-6 px-10 text-lg hover:bg-background/90 shadow-xl hover:shadow-2xl transition-all"
               size="lg"
             >
-              Get Started Today
+              <Link href="/comingsoon">Get Started Today</Link>
             </Button>
           </motion.div>
         </div>
@@ -499,6 +499,8 @@ const MainContent: React.FC = () => {
                 <h4 className="text-lg font-semibold mb-2">Phone</h4>
                 <a href="tel:+256763634264" className="text-muted-foreground transition-all duration-300 hover:text-primary">
                   +256 763634264
+                  <br />
+                  +256 783833540
                 </a>
               </div>
             </motion.div>
@@ -548,7 +550,10 @@ const MainContent: React.FC = () => {
                 <CardTitle className="text-2xl text-primary">Send us a Message</CardTitle>
               </CardHeader>
               <CardContent>
-                <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
+                <form ref={formRef} 
+                action="https://formspree.io/f/movwrdga"
+                method="POST"
+                className="space-y-4">
                   <div>
                     <Label htmlFor="name">Name</Label>
                     <Input 
@@ -604,7 +609,6 @@ const MainContent: React.FC = () => {
   );
 };
 
-// Main component wrapped with Layout
 const Main: React.FC = () => {
   return (
     <Layout>

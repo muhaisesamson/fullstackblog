@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Linkedin, Twitter } from 'lucide-react';
+import { SiFacebook, SiInstagram, SiLinkedin, SiX } from 'react-icons/si';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
@@ -7,37 +7,37 @@ const Footer = () => {
     {
       title: "Company",
       links: [
-        { label: "About Us", href: "/about" },
-        { label: "Careers", href: "#" },
-        { label: "Press", href: "#" },
-        { label: "Blog", href: "#" },
+        { label: "About Us", href: "/comingsoon" },
+        { label: "Careers", href: "/comingsoon" },
+        { label: "Press", href: "/comingsoon" },
+        { label: "Blog", href: "/comingsoon" },
       ],
     },
     {
       title: "Resources",
       links: [
-        { label: "Help Center", href: "#" },
-        { label: "Privacy Policy", href: "#" },
-        { label: "Terms of Service", href: "#" },
-        { label: "Cookie Policy", href: "#" },
+        { label: "Help Center", href: "/comingsoon" },
+        { label: "Privacy Policy", href: "/comingsoon" },
+        { label: "Terms of Service", href: "/comingsoon" },
+        { label: "Cookie Policy", href: "/comingsoon" },
       ],
     },
     {
       title: "Connect",
       links: [
-        { label: "Therapists", href: "#" },
-        { label: "Partnerships", href: "#" },
-        { label: "Community", href: "#" },
+        { label: "Therapists", href: "/comingsoon" },
+        { label: "Partnerships", href: "/comingsoon" },
+        { label: "Community", href: "/comingsoon" },
         { label: "Contact Us", href: "#contact" },
       ],
     },
   ];
 
   const socialLinks = [
-    { icon: <Twitter size={18} />, href: "#" },
-    { icon: <Facebook size={18} />, href: "#" },
-    { icon: <Instagram size={18} />, href: "#" },
-    { icon: <Linkedin size={18} />, href: "#" },
+    { icon: <SiX size={18} />, href: "https://x.com/mindhubHS" },
+    { icon: <SiFacebook size={18} />, href: "/comingsoon" },
+    { icon: <SiInstagram size={18} />, href: "/comingsoon" },
+    { icon: <SiLinkedin size={18} />, href: "https://www.linkedin.com/in/mindhub-hs-8551bb372" },
   ];
 
   return (
