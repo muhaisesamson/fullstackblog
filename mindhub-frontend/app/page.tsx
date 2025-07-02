@@ -270,16 +270,6 @@ const MainContent: React.FC = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (formRef.current) {
-      const formData = new FormData(formRef.current);
-      console.log(Object.fromEntries(formData));
-      alert('Thank you for your message! We will get back to you soon.');
-      formRef.current.reset();
-    }
-  };
-
   return (
     <main className="relative overflow-hidden">
       <FloatingActionButton />

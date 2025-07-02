@@ -8,6 +8,7 @@ export default function ComingSoonPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    console.log("Email sent")
 
     try {
       const res = await fetch('https://formspree.io/f/movwrdga', {
@@ -33,7 +34,7 @@ export default function ComingSoonPage() {
 
   return (
     <main className="min-h-screen flex flex-col items-center justify-center bg-white p-6 text-center">
-      <h1 className="text-4xl font-bold mb-4">We're Launching Soon!</h1>
+      <h1 className="text-4xl font-bold mb-4">We&apos;re Launching Soon!</h1>
       <p className="text-lg mb-6">Leave your email and be the first to know when we go live.</p>
       
       {!submitted ? (
@@ -51,7 +52,7 @@ export default function ComingSoonPage() {
           </button>
         </form>
       ) : (
-        <p className="text-green-600 text-lg">Thank you! We'll be in touch soon.</p>
+        <p className="text-green-600 text-lg">Thank you! We&apos;ll be in touch soon.</p>
       )}
     </main>
   )
