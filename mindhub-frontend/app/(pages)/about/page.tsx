@@ -261,7 +261,7 @@ const AboutPage: React.FC = () => {
                 animate={heroInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                How two passionate individuals came together to revolutionize mental wellness and create meaningful change in people's lives
+                How two passionate individuals came together to revolutionize mental wellness and create meaningful change in people&apos;s lives
               </motion.p>
             </motion.div>
           </div>
@@ -280,7 +280,7 @@ const AboutPage: React.FC = () => {
               <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">Meet the Founders</h2>
               <div className="w-24 h-1 bg-primary mx-auto mb-6"></div>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                The passionate minds behind MindHub's vision to transform mental wellness
+                The passionate minds behind MindHub&apos;s vision to transform mental wellness
               </p>
             </motion.div>
             
