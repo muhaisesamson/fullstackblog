@@ -1,7 +1,8 @@
+'use client';
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-
+import { useRouter } from 'next/navigation';
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -32,6 +33,7 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [prevScrollY]);
 
+  const router = useRouter();
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -40,6 +42,9 @@ const Header = () => {
         behavior: 'smooth'
       });
       setMobileMenuOpen(false);
+    } else {
+    // Not on homepage – navigate to homepage with hash
+    router.push(`/#${id}`);
     }
   };
 

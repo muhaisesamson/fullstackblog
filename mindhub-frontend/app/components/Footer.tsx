@@ -28,7 +28,7 @@ const Footer = () => {
         { label: "Therapists", href: "/comingsoon" },
         { label: "Partnerships", href: "/comingsoon" },
         { label: "Community", href: "/comingsoon" },
-        { label: "Contact Us", href: "#contact" },
+        { label: "Contact Us", href: "/#contact" },
       ],
     },
   ];
