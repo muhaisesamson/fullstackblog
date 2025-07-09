@@ -313,37 +313,129 @@ const MainContent: React.FC = () => {
     initial={{ opacity: 0, y: 50 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ delay: 0.4, duration: 0.8 }}
-    className="text-center"
+    className="text-center group cursor-pointer"
+    whileHover={{ scale: 1.02 }}
   >
+    {/* Interactive Brain Emoji */}
     <motion.div 
-      className="text-6xl mb-6"
+      className="text-7xl mb-6 relative inline-block"
       animate={{
         y: [0, -10, 0],
-        rotate: [0, 5, -5, 0]
       }}
       transition={{
         duration: 4,
         repeat: Infinity,
         ease: "easeInOut"
       }}
+      whileHover={{
+        rotate: [0, 15, -15, 0],
+        scale: 1.1,
+        transition: { duration: 0.6 }
+      }}
+      whileTap={{ scale: 0.9 }}
     >
       🧠
+      {/* Subtle glow effect on hover */}
+      <motion.div 
+        className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-40 bg-white blur-md"
+        initial={{ scale: 0.8 }}
+        whileHover={{ scale: 1.2 }}
+        transition={{ duration: 0.3 }}
+      />
     </motion.div>
-    <h3 className="text-4xl font-bold bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent mb-2">
+
+    {/* Animated Title */}
+    <motion.h3 
+      className="text-5xl font-bold bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent mb-2"
+      whileHover={{
+        backgroundPosition: '100% 50%',
+        transition: { duration: 1.5, repeat: Infinity, repeatType: 'reverse' }
+      }}
+      style={{
+        backgroundSize: '200% auto'
+      }}
+    >
       MindHub
-    </h3>
-    <p className="text-lg text-white/80 tracking-wider">
-      TRANSFORMING MENTAL WELLNESS
+    </motion.h3>
+
+    {/* Static Tagline */}
+    <p className="text-lg text-white/80 tracking-wider mb-6">
+      Transforming Mental Wellness
     </p>
+
+    {/* Interactive particles on hover */}
     <motion.div 
-      className="mt-8 flex justify-center gap-4"
+      className="absolute inset-0 pointer-events-none"
+      initial={{ opacity: 0 }}
+      whileHover={{
+        opacity: 1,
+        transition: { staggerChildren: 0.1 }
+      }}
+    >
+      {[...Array(12)].map((_, i) => (
+        <motion.div
+          key={i}
+          className="absolute rounded-full bg-white/30"
+          initial={{ 
+            x: 0,
+            y: 0,
+            width: 4,
+            height: 4,
+            opacity: 0
+          }}
+          whileHover={{
+            x: [0, (Math.random() - 0.5) * 100],
+            y: [0, (Math.random() - 0.5) * 100],
+            opacity: [0, 1, 0],
+            transition: { 
+              duration: 1.5,
+              repeat: Infinity,
+              delay: i * 0.1
+            }
+          }}
+          style={{
+            left: '50%',
+            top: '30%'
+          }}
+        />
+      ))}
+    </motion.div>
+
+    {/* Decorative animated lines */}
+    <motion.div 
+      className="flex justify-center gap-4"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ delay: 0.8 }}
+      transition={{ delay: 1.2 }}
+      whileHover={{
+        gap: [8, 16, 8],
+        transition: { duration: 1, repeat: Infinity }
+      }}
     >
-      <div className="w-16 h-1 bg-white/50"></div>
-      <div className="w-16 h-1 bg-white"></div>
-      <div className="w-16 h-1 bg-white/50"></div>
+      <motion.div 
+        className="w-16 h-1 bg-white/50"
+        whileHover={{
+          width: [64, 80, 64],
+          backgroundColor: ['rgba(255,255,255,0.5)', 'rgba(255,255,255,1)', 'rgba(255,255,255,0.5)'],
+          transition: { duration: 1, repeat: Infinity }
+        }}
+      />
+      <motion.div 
+        className="w-16 h-1 bg-white"
+        whileHover={{
+          width: [64, 80, 64],
+          backgroundColor: ['rgba(255,255,255,1)', 'rgba(255,255,255,0.8)', 'rgba(255,255,255,1)'],
+          transition: { duration: 1, repeat: Infinity, delay: 0.2 }
+        }}
+      />
+      <motion.div 
+        className="w-16 h-1 bg-white/50"
+        whileHover={{
+          width: [64, 80, 64],
+          backgroundColor: ['rgba(255,255,255,0.5)', 'rgba(255,255,255,0.3)', 'rgba(255,255,255,0.5)'],
+          transition: { duration: 1, repeat: Infinity, delay: 0.4 }
+        }}
+      />
     </motion.div>
   </motion.div>
 </div>
