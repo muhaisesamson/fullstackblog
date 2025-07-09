@@ -308,35 +308,45 @@ const MainContent: React.FC = () => {
             </div>
           </div>
           
-          <div className="flex justify-center items-center">
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.8 }}
-            >
-              <Card className="w-full max-w-sm bg-background/10 backdrop-blur-sm rounded-2xl shadow-xl border border-background/20 p-8 text-white text-center relative overflow-hidden">
-                <div className="absolute -top-20 -right-20 w-40 h-40 rounded-full bg-background/10"></div>
-                <div className="absolute -bottom-20 -left-20 w-40 h-40 rounded-full bg-background/10"></div>
-                <CardContent className="p-0 relative z-10">
-                  <motion.div 
-                    className="text-5xl mb-4"
-                    animate={{
-                      y: [0, -10, 0],
-                    }}
-                    transition={{
-                      duration: 4,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }}
-                  >
-                    🧠
-                  </motion.div>
-                  <h3 className="text-2xl font-bold">MindHub</h3>
-                  <p className="text-white/80 mt-2">Mental Wellness App</p>
-                </CardContent>
-              </Card>
-            </motion.div>
-          </div>
+         <div className="flex justify-center items-center">
+  <motion.div
+    initial={{ opacity: 0, y: 50 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ delay: 0.4, duration: 0.8 }}
+    className="text-center"
+  >
+    <motion.div 
+      className="text-6xl mb-6"
+      animate={{
+        y: [0, -10, 0],
+        rotate: [0, 5, -5, 0]
+      }}
+      transition={{
+        duration: 4,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }}
+    >
+      🧠
+    </motion.div>
+    <h3 className="text-4xl font-bold bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent mb-2">
+      MindHub
+    </h3>
+    <p className="text-lg text-white/80 tracking-wider">
+      TRANSFORMING MENTAL WELLNESS
+    </p>
+    <motion.div 
+      className="mt-8 flex justify-center gap-4"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 0.8 }}
+    >
+      <div className="w-16 h-1 bg-white/50"></div>
+      <div className="w-16 h-1 bg-white"></div>
+      <div className="w-16 h-1 bg-white/50"></div>
+    </motion.div>
+  </motion.div>
+</div>
         </div>
 
         <motion.div 
